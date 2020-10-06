@@ -12,13 +12,19 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Where;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
+@Where(clause="is_active=1")
 @Table(name="dependents")
 public class Dependent implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8653766376895782497L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
@@ -31,6 +37,9 @@ public class Dependent implements Serializable{
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "enrolleeId")
 	private Enrollee enrollee;
+	
+	@Column(name="is_active")
+	private Boolean active;
 	
 	public int getId() {
 		return id;

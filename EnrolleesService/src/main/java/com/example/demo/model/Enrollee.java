@@ -12,9 +12,16 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Where;
+
 @Entity
+@Where(clause="is_active=1")
 @Table(name="enrollees")
 public class Enrollee implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7245305243583755141L;
 	@Id
 	@GeneratedValue(strategy= GenerationType.AUTO)
 	private int enrolleeId;
@@ -26,6 +33,9 @@ public class Enrollee implements Serializable {
 	private String birthDate;
 	@Column
 	private String phoneNumber;
+	
+	@Column(name="is_active")
+	private Boolean active;
 	
 	@OneToMany(mappedBy = "enrollee", fetch= FetchType.EAGER)
 	private List<Dependent> dependents;
