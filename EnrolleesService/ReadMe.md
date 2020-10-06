@@ -1,24 +1,50 @@
 # Getting Started
 
-# Project Structure
+# Project Structure   
+   
+```
+──- EnrolleesService
+    ├── HELP.md
+    ├── mvnw
+    ├── mvnw.cmd
+    ├── pom.xml
+    ├── ReadMe.md
+    └── src
+        ├── main
+        │   ├── java
+        │   │   └── com
+        │   │       └── example
+        │   │           └── demo
+        │   │               ├── controller
+        │   │               │   ├── DependantController.java
+        │   │               │   └── FrontController.java
+        │   │               ├── EnrolleesServiceApplication.java
+        │   │               ├── model
+        │   │               │   ├── Dependent.java
+        │   │               │   └── Enrollee.java
+        │   │               ├── repo
+        │   │               │   ├── DependentsRepository.java
+        │   │               │   └── EnrolleesRepository.java
+        │   │               ├── service
+        │   │               │   ├── DependentService.java
+        │   │               │   └── EnroleeService.java
+        │   │               ├── serviceImpl
+        │   │               │   ├── DependentServiceImpl.java
+        │   │               │   └── EnroleeServiceImpl.java
+        │   │               └── ServletInitializer.java
+        │   ├── resources
+        │   │   ├── application.properties
+        │   │   └── log4j2.xml
+        │   └── webapp
+        └── test
+            └── java
+                └── com
+                    └── example
+                        └── demo
+                            ├── DependentTests.java
+                            └── EnrolleesTests.java
+```
 
- Root -
-        Controller -
-			FrontController		-
-			DependantController -
-		Service -
-			EnroleeService
-			DependentService
-		Service Implemntation
-			EnroleeServiceImpl
-			DependentServiceImpl
-		Repository
-			EnrolleesRepository
-			DependentsRepository
-		Model
-			Enrollee
-			Dependent
-		
 # Contents   
 1. Supports 5 API for enrollees operation   
  a. get all enrolees -> http://localhost:port/enrollees/getAll   
